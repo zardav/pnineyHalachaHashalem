@@ -1,0 +1,16 @@
+#Mon Oct 09 14:03:09 IDT 2017
+renamed.4=classes3.dex
+renamed.3=classes4.dex
+renamed.2=classes5.dex
+renamed.1=classes.dex
+base.4=C\:\\Users\\rejan\\StudioProjects\\pnineyHalachaHashalem\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\internal_impl-23.1.0_83a648c8ab92d3ae205d090b8cf8ca5724881617
+renamed.0=classes2.dex
+base.3=C\:\\Users\\rejan\\StudioProjects\\pnineyHalachaHashalem\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-23.1.0_99c6fb3cc2f7826879291181eae44695f5298314
+base.2=C\:\\Users\\rejan\\StudioProjects\\pnineyHalachaHashalem\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\jsoup-1.7.3_e17c51ea298c6b54c8d6e1cadfc66dfc0f437903
+base.1=C\:\\Users\\rejan\\StudioProjects\\pnineyHalachaHashalem\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_0f490a42203b1971aaa833edbb43c904e2aade4e
+base.0=C\:\\Users\\rejan\\StudioProjects\\pnineyHalachaHashalem\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_311c80bb42de6d76ff4a09b3b4b45758e54c7cf0
+file.4=C\:\\Users\\rejan\\StudioProjects\\pnineyHalachaHashalem\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\internal_impl-23.1.0_83a648c8ab92d3ae205d090b8cf8ca5724881617\\classes.dex
+file.3=C\:\\Users\\rejan\\StudioProjects\\pnineyHalachaHashalem\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\support-annotations-23.1.0_99c6fb3cc2f7826879291181eae44695f5298314\\classes.dex
+file.2=C\:\\Users\\rejan\\StudioProjects\\pnineyHalachaHashalem\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\jsoup-1.7.3_e17c51ea298c6b54c8d6e1cadfc66dfc0f437903\\classes.dex
+file.1=C\:\\Users\\rejan\\StudioProjects\\pnineyHalachaHashalem\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_0f490a42203b1971aaa833edbb43c904e2aade4e\\classes.dex
+file.0=C\:\\Users\\rejan\\StudioProjects\\pnineyHalachaHashalem\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_311c80bb42de6d76ff4a09b3b4b45758e54c7cf0\\classes.dex

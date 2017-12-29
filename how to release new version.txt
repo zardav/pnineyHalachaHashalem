@@ -1,0 +1,5 @@
+1. Build->Generate signed APK (if password needed: 610028)
+2. go to the apk folder: C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\build\outputs\apk
+3. go the cmd of this folder and type this command (copy the following line including the C:\):
+C:\Users\rejan\AppData\Local\Android\sdk\build-tools\23.0.2\zipalign 4 app-release-unaligned.apk app-release-aligned.apk
+This will generate an aligned apk. now you can upload it to play store

@@ -1,0 +1,167 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:2:1-97:12
+	package
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:3:5-48
+		INJECTED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml
+	android:versionCode
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:4:5-29
+		INJECTED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:2:11-69
+	android:installLocation
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:6:5-35
+uses-sdk
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\rejan\.android\build-cache\59fc69f3e407cb7a4a3bbd73f52a992b0ff70dd5\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.0] C:\Users\rejan\.android\build-cache\264cd1e652f4d77481864c543a9339b0e211c496\output\AndroidManifest.xml:20:5-43
+	android:targetSdkVersion
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:10:9-38
+		INJECTED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:9:9-34
+		INJECTED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:12:22-64
+application
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:14:5-95:19
+MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\rejan\.android\build-cache\59fc69f3e407cb7a4a3bbd73f52a992b0ff70dd5\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.0] C:\Users\rejan\.android\build-cache\264cd1e652f4d77481864c543a9339b0e211c496\output\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:17:9-41
+	android:allowBackup
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:15:9-35
+	android:icon
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:16:9-45
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:18:9-40
+activity#com.rafraph.pnineyHalachaHashalem.Splash
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:19:9-28:20
+	android:label
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:21:13-45
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:22:13-77
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:20:13-68
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:23:13-27:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:24:17-69
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:26:27-74
+activity#com.rafraph.pnineyHalachaHashalem.MainActivity
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:29:9-42:20
+	android:label
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:31:13-45
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:32:13-57
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:30:13-74
+intent-filter#android.intent.category.DEFAULT+com.rafraph.pnineyHalachaHashalem.MAINACTIVITY
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:33:13-37:29
+action#com.rafraph.pnineyHalachaHashalem.MAINACTIVITY
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:34:17-89
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:34:25-86
+category#android.intent.category.DEFAULT
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:36:17-76
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:36:27-73
+meta-data#android.app.default_searchable
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:39:13-41:55
+	android:value
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:41:17-52
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:40:17-62
+activity#com.rafraph.pnineyHalachaHashalem.textMain
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:43:9-54:20
+	android:label
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:46:13-45
+	android:hardwareAccelerated
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:48:13-48
+	android:configChanges
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:45:13-74
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:47:13-57
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:44:13-70
+activity#com.rafraph.pnineyHalachaHashalem.About
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:55:9-59:20
+	android:label
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:57:13-57
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:58:13-60
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:56:13-67
+activity#com.rafraph.pnineyHalachaHashalem.Feedback
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:60:9-64:20
+	android:label
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:62:13-60
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:63:13-60
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:61:13-70
+activity#com.rafraph.pnineyHalachaHashalem.SearchHelp
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:65:9-69:20
+	android:label
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:67:13-63
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:68:13-60
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:66:13-72
+activity#com.rafraph.pnineyHalachaHashalem.Settings
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:70:9-74:20
+	android:label
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:72:13-60
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:73:13-60
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:71:13-70
+activity#com.rafraph.pnineyHalachaHashalem.SearchableActivity
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:75:9-84:20
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:77:13-60
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:76:13-80
+intent-filter#android.intent.action.SEARCH
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:78:13-80:29
+action#android.intent.action.SEARCH
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:79:17-71
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:79:25-68
+meta-data#android.app.searchable
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:81:13-83:54
+	android:resource
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:83:17-51
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:82:17-54
+activity#com.rafraph.pnineyHalachaHashalem.BookmarksActivity
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:85:9-89:20
+	android:label
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:87:13-61
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:88:13-60
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:86:13-79
+activity#com.rafraph.pnineyHalachaHashalem.BookmarkActivity
+ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:90:9-94:20
+	android:label
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:92:13-60
+	android:theme
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:93:13-60
+	android:name
+		ADDED from C:\Users\rejan\StudioProjects\pnineyHalachaHashalem\app\src\main\AndroidManifest.xml:91:13-78

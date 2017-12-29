@@ -1,0 +1,92 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:showDividers="middle|end"
+    tools:context=".Settings" >
+
+    <CheckBox
+        android:id="@+id/checkBoxSleepScreen"
+        style="@string/action_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:lines="2"
+        android:minLines="2"
+        android:singleLine="false"
+        android:text="ביטול החשכת מסך"
+        android:textAppearance="@style/AppTheme"
+        android:textSize="23sp"
+        android:checked="true"
+        />
+
+	<View
+	    android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:layout_marginTop="20dp"
+	    android:background="#B8B894" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBlackBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="צבע רקע שחור"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+    
+    <View
+	    android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:layout_marginTop="20dp"
+	    android:background="#B8B894" />
+    
+    <CheckBox
+        android:id="@+id/checkBoxFullScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="בתצוגת מסך מלא - השאר כפתורי עזר"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+    
+    <View
+	    android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:layout_marginTop="20dp"
+	    android:background="#B8B894" />
+    
+    <CheckBox
+        android:id="@+id/checkBoxAssistButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="הצג כפתורי עזר בחלק התחתון של המסך"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:checked="true"/>
+    
+    <View
+	    android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:layout_marginTop="20dp"
+	    android:background="#B8B894" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLastLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onCheckboxClicked"
+        android:text="בפתיחת האפליקציה דלג למיקום האחרון"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:checked="true"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#B8B894" />
+
+</LinearLayout>
