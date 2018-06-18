@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "226328739267",
+    "firebase_url": "https://pnineyhalachahashalem.firebaseio.com",
+    "project_id": "pnineyhalachahashalem",
+    "storage_bucket": "pnineyhalachahashalem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226328739267:android:441cb7ecde703a40",
+        "android_client_info": {
+          "package_name": "com.rafraph.pnineyHalachaHashalem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226328739267-al1i48iod3fmon2ifn4j0k4t8a5gr8rq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rafraph.pnineyHalachaHashalem",
+            "certificate_hash": "3cadc3767f82c9e83934af0986f8651ef96044d6"
+          }
+        },
+        {
+          "client_id": "226328739267-8u81b6ts2mtednkdb0a4u1fmprai4lv4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYyyiQU8X6sN4a-q9iMjE2g1ZDEerI8DA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

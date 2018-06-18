@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rafraph.pnineyHalachaHashalem"
-    android:versionCode="17"
-    android:versionName="2.1"
+    android:versionCode="21"
+    android:versionName="2.3"
     android:installLocation="auto">
 
     <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="23" />
+        android:minSdkVersion="14"
+        android:targetSdkVersion="26" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 

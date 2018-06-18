@@ -25,7 +25,7 @@
     <string name="Chapters">Chapters</string>
     <string name="title_activity_bookmarks">BookmarksActivity</string>
     <string name="title_activity_bookmark">BookmarkActivity</string>
-    <string name="version"><b><u>גירסה 2.1</u></b></string>
+    <string name="version"><b><u>גירסה 2.3</u></b></string>
     <string-array name="speed_array">
         <item>1</item>
         <item>2</item>

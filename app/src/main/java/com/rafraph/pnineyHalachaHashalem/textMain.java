@@ -60,34 +60,36 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 	private static final int HAAMVEHAAREZ 	= 1;
 	private static final int ZMANIM    		= 2;
 	private static final int YAMIM    		= 3;
-	private static final int LIKUTIM_A 		= 4;
-	private static final int LIKUTIM_B 		= 5;
-	private static final int LIKUTIM_C 		= 6;
+	private static final int KASHRUT   		= 4;
+	private static final int LIKUTIM_A 		= 5;
+	private static final int LIKUTIM_B 		= 6;
 	private static final int MOADIM    		= 7;
-	private static final int SUCOT			= 8;
-	private static final int PESACH			= 9;
-	private static final int SHVIIT			= 10;
-	private static final int SHABAT			= 11;
-	private static final int SIMCHAT		= 12;	
-	private static final int TEFILA			= 13;
-	private static final int TEFILAT_NASHIM	= 14;
-	private static final int HAR_BRACHOT    = 15;
-	private static final int HAR_YAMIM      = 16;
-	private static final int HAR_MOADIM     = 17;
-	private static final int HAR_SUCOT      = 18;
-	private static final int HAR_SHABAT     = 19;
-	private static final int HAR_SIMCHAT    = 20;
-	private static final int BOOKS_HEB_NUMBER	= 21;
-	private static final int E_TEFILA       = 21;
-	private static final int E_PESACH       = 22;
-	private static final int E_ZMANIM       = 23;
-	private static final int E_WOMEN_PRAYER = 24;
-	private static final int E_SHABAT       = 25;
-	private static final int F_TEFILA       = 26;
-	private static final int BOOKS_NUMBER	= 27;
+	private static final int MISHPACHA		= 8;
+	private static final int SUCOT			= 9;
+	private static final int PESACH			= 10;
+	private static final int SHVIIT			= 11;
+	private static final int SHABAT			= 12;
+	private static final int SIMCHAT		= 13;
+	private static final int TEFILA			= 14;
+	private static final int TEFILAT_NASHIM	= 15;
+	private static final int HAR_BRACHOT    = 16;
+	private static final int HAR_YAMIM      = 17;
+	private static final int HAR_MOADIM     = 18;
+	private static final int HAR_SUCOT      = 19;
+	private static final int HAR_SHABAT     = 20;
+	private static final int HAR_SIMCHAT    = 21;
+	private static final int BOOKS_HEB_NUMBER	= 22;
+	private static final int E_TEFILA       = 22;
+	private static final int E_PESACH       = 23;
+	private static final int E_ZMANIM       = 24;
+	private static final int E_WOMEN_PRAYER = 25;
+	private static final int E_SHABAT       = 26;
+	private static final int F_TEFILA       = 27;
+	private static final int S_SHABAT       = 28;
+	private static final int BOOKS_NUMBER	= 29;
 
-	/*							0	1	2	3	4	5	6	7	8	9  10  11  12  13  14  15  16  17  18 19  20  21  22  23  24  25  26*/
-	public int[] lastChapter = {17, 11, 17, 10, 13, 17, 16, 13, 8, 16, 11, 30, 10, 26, 24, 17, 10, 12, 8, 30, 10, 26, 16, 15, 24, 30, 26};
+	/*							0	1	2	3	4	5	6	7	8	9  10  11  12  13  14  15  16  17  18 19  20  21  22  23  24  25  26  27  28*/
+	public int[] lastChapter = {17, 11, 17, 10, 19, 11, 16, 13, 10, 8, 16, 11, 30, 10, 26, 24, 17, 10, 12, 8, 30, 10, 26, 16, 15, 24, 30, 26, 30};
 
     private static final int HEBREW	 = 0;
     private static final int ENGLISH = 1;
@@ -1022,7 +1024,28 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersFiles[YAMIM][7] = "file:///android_asset/yamim_7.html";
 		chaptersFiles[YAMIM][8] = "file:///android_asset/yamim_8.html";
 		chaptersFiles[YAMIM][9] = "file:///android_asset/yamim_9.html";
-		chaptersFiles[YAMIM][10] = "file:///android_asset/yamim_10.html";		
+		chaptersFiles[YAMIM][10] = "file:///android_asset/yamim_10.html";
+		/*KASHRUT*/
+		chaptersFiles[KASHRUT][0] = "file:///android_asset/kashrut_tochen.html";
+		chaptersFiles[KASHRUT][1] = "file:///android_asset/kashrut_1.html";
+		chaptersFiles[KASHRUT][2] = "file:///android_asset/kashrut_2.html";
+		chaptersFiles[KASHRUT][3] = "file:///android_asset/kashrut_3.html";
+		chaptersFiles[KASHRUT][4] = "file:///android_asset/kashrut_4.html";
+		chaptersFiles[KASHRUT][5] = "file:///android_asset/kashrut_5.html";
+		chaptersFiles[KASHRUT][6] = "file:///android_asset/kashrut_6.html";
+		chaptersFiles[KASHRUT][7] = "file:///android_asset/kashrut_7.html";
+		chaptersFiles[KASHRUT][8] = "file:///android_asset/kashrut_8.html";
+		chaptersFiles[KASHRUT][9] = "file:///android_asset/kashrut_9.html";
+		chaptersFiles[KASHRUT][10] = "file:///android_asset/kashrut_10.html";
+		chaptersFiles[KASHRUT][11] = "file:///android_asset/kashrut_11.html";
+		chaptersFiles[KASHRUT][12] = "file:///android_asset/kashrut_12.html";
+		chaptersFiles[KASHRUT][13] = "file:///android_asset/kashrut_13.html";
+		chaptersFiles[KASHRUT][14] = "file:///android_asset/kashrut_14.html";
+		chaptersFiles[KASHRUT][15] = "file:///android_asset/kashrut_15.html";
+		chaptersFiles[KASHRUT][16] = "file:///android_asset/kashrut_16.html";
+		chaptersFiles[KASHRUT][17] = "file:///android_asset/kashrut_17.html";
+		chaptersFiles[KASHRUT][18] = "file:///android_asset/kashrut_18.html";
+		chaptersFiles[KASHRUT][19] = "file:///android_asset/kashrut_19.html";
 		/*LIKUTIM_A*/
 		chaptersFiles[LIKUTIM_A][0] = "file:///android_asset/likutim_a_tochen.html";
 		chaptersFiles[LIKUTIM_A][1] = "file:///android_asset/likutim_a_1.html";
@@ -1036,8 +1059,6 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersFiles[LIKUTIM_A][9] = "file:///android_asset/likutim_a_9.html";
 		chaptersFiles[LIKUTIM_A][10] = "file:///android_asset/likutim_a_10.html";
 		chaptersFiles[LIKUTIM_A][11] = "file:///android_asset/likutim_a_11.html";
-		chaptersFiles[LIKUTIM_A][12] = "file:///android_asset/likutim_a_12.html";
-		chaptersFiles[LIKUTIM_A][13] = "file:///android_asset/likutim_a_13.html";
 		/*LIKUTIM_B*/
 		chaptersFiles[LIKUTIM_B][0] = "file:///android_asset/likutim_b_tochen.html";
 		chaptersFiles[LIKUTIM_B][1] = "file:///android_asset/likutim_b_1.html";
@@ -1056,25 +1077,18 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersFiles[LIKUTIM_B][14] = "file:///android_asset/likutim_b_14.html";
 		chaptersFiles[LIKUTIM_B][15] = "file:///android_asset/likutim_b_15.html";
 		chaptersFiles[LIKUTIM_B][16] = "file:///android_asset/likutim_b_16.html";
-		/*LIKUTIM_C*/
-		chaptersFiles[LIKUTIM_C][0] = "file:///android_asset/likutim_c_tochen.html";
-		chaptersFiles[LIKUTIM_C][1] = "file:///android_asset/likutim_c_1.html";
-		chaptersFiles[LIKUTIM_C][2] = "file:///android_asset/likutim_c_2.html";
-		chaptersFiles[LIKUTIM_C][3] = "file:///android_asset/likutim_c_3.html";
-		chaptersFiles[LIKUTIM_C][4] = "file:///android_asset/likutim_c_4.html";
-		chaptersFiles[LIKUTIM_C][5] = "file:///android_asset/likutim_c_5.html";
-		chaptersFiles[LIKUTIM_C][6] = "file:///android_asset/likutim_c_6.html";
-		chaptersFiles[LIKUTIM_C][7] = "file:///android_asset/likutim_c_7.html";
-		chaptersFiles[LIKUTIM_C][8] = "file:///android_asset/likutim_c_8.html";
-		chaptersFiles[LIKUTIM_C][9] = "file:///android_asset/likutim_c_9.html";
-		chaptersFiles[LIKUTIM_C][10] = "file:///android_asset/likutim_c_10.html";
-		chaptersFiles[LIKUTIM_C][11] = "file:///android_asset/likutim_c_11.html";
-		chaptersFiles[LIKUTIM_C][12] = "file:///android_asset/likutim_c_12.html";
-		chaptersFiles[LIKUTIM_C][13] = "file:///android_asset/likutim_c_13.html";
-		chaptersFiles[LIKUTIM_C][14] = "file:///android_asset/likutim_c_14.html";
-		chaptersFiles[LIKUTIM_C][15] = "file:///android_asset/likutim_c_15.html";
-		chaptersFiles[LIKUTIM_C][16] = "file:///android_asset/likutim_c_16.html";
-		chaptersFiles[LIKUTIM_C][17] = "file:///android_asset/likutim_c_17.html";
+		/*MISHPACHA*/
+		chaptersFiles[MISHPACHA][0] = "file:///android_asset/mishpacha_tochen.html";
+		chaptersFiles[MISHPACHA][1] = "file:///android_asset/mishpacha_1.html";
+		chaptersFiles[MISHPACHA][2] = "file:///android_asset/mishpacha_2.html";
+		chaptersFiles[MISHPACHA][3] = "file:///android_asset/mishpacha_3.html";
+		chaptersFiles[MISHPACHA][4] = "file:///android_asset/mishpacha_4.html";
+		chaptersFiles[MISHPACHA][5] = "file:///android_asset/mishpacha_5.html";
+		chaptersFiles[MISHPACHA][6] = "file:///android_asset/mishpacha_6.html";
+		chaptersFiles[MISHPACHA][7] = "file:///android_asset/mishpacha_7.html";
+		chaptersFiles[MISHPACHA][8] = "file:///android_asset/mishpacha_8.html";
+		chaptersFiles[MISHPACHA][9] = "file:///android_asset/mishpacha_9.html";
+		chaptersFiles[MISHPACHA][10] = "file:///android_asset/mishpacha_10.html";
 		/*MOADIM*/
 		chaptersFiles[MOADIM][0] = "file:///android_asset/moadim_tochen.html";
 		chaptersFiles[MOADIM][1] = "file:///android_asset/moadim_1.html";
@@ -1331,7 +1345,7 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersFiles[HAR_SIMCHAT][9] = "file:///android_asset/har_simchat_9.html";
 		chaptersFiles[HAR_SIMCHAT][10] = "file:///android_asset/har_simchat_10.html";
 		/*E_TEFILA*/
-		chaptersFiles[E_TEFILA][0] = "file:///android_asset/E_tefila_contents.html";
+		chaptersFiles[E_TEFILA][0] = "file:///android_asset/E_tefila_tochen.html";
 		chaptersFiles[E_TEFILA][1] = "file:///android_asset/E_tefila_1.html";
 		chaptersFiles[E_TEFILA][2] = "file:///android_asset/E_tefila_2.html";
 		chaptersFiles[E_TEFILA][3] = "file:///android_asset/E_tefila_3.html";
@@ -1359,7 +1373,7 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersFiles[E_TEFILA][25] = "file:///android_asset/E_tefila_25.html";
 		chaptersFiles[E_TEFILA][26] = "file:///android_asset/E_tefila_26.html";
 		/*E_PESACH*/		
-		chaptersFiles[E_PESACH][0] = "file:///android_asset/E_pesach_contents.html";
+		chaptersFiles[E_PESACH][0] = "file:///android_asset/E_pesach_tochen.html";
 		chaptersFiles[E_PESACH][1] = "file:///android_asset/E_pesach_1.html";
 		chaptersFiles[E_PESACH][2] = "file:///android_asset/E_pesach_2.html";
 		chaptersFiles[E_PESACH][3] = "file:///android_asset/E_pesach_3.html";
@@ -1377,7 +1391,7 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersFiles[E_PESACH][15] = "file:///android_asset/E_pesach_15.html";
 		chaptersFiles[E_PESACH][16] = "file:///android_asset/E_pesach_16.html";
 		/*E_ZMANIM*/
-		chaptersFiles[E_ZMANIM][0] = "file:///android_asset/E_zmanim_contents.html";
+		chaptersFiles[E_ZMANIM][0] = "file:///android_asset/E_zmanim_tochen.html";
 		chaptersFiles[E_ZMANIM][1] = "file:///android_asset/E_zmanim_1.html";
 		chaptersFiles[E_ZMANIM][2] = "file:///android_asset/E_zmanim_2.html";
 		chaptersFiles[E_ZMANIM][3] = "file:///android_asset/E_zmanim_3.html";
@@ -1394,7 +1408,7 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersFiles[E_ZMANIM][14] = "file:///android_asset/E_zmanim_14.html";
 		chaptersFiles[E_ZMANIM][15] = "file:///android_asset/E_zmanim_15.html";
 		/*E_WOMEN_PRAYER*/
-		chaptersFiles[E_WOMEN_PRAYER][0] = "file:///android_asset/e_w_prayer_contents.html";
+		chaptersFiles[E_WOMEN_PRAYER][0] = "file:///android_asset/e_w_prayer_tochen.html";
 		chaptersFiles[E_WOMEN_PRAYER][1] = "file:///android_asset/e_w_prayer_1.html";
 		chaptersFiles[E_WOMEN_PRAYER][2] = "file:///android_asset/e_w_prayer_2.html";
 		chaptersFiles[E_WOMEN_PRAYER][3] = "file:///android_asset/e_w_prayer_3.html";
@@ -1420,7 +1434,7 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersFiles[E_WOMEN_PRAYER][23] = "file:///android_asset/e_w_prayer_23.html";
 		chaptersFiles[E_WOMEN_PRAYER][24] = "file:///android_asset/e_w_prayer_24.html";
 		/*E_SHABAT*/
-		chaptersFiles[E_SHABAT][0] = "file:///android_asset/e_shabbat_contents.html";
+		chaptersFiles[E_SHABAT][0] = "file:///android_asset/e_shabbat_tochen.html";
 		chaptersFiles[E_SHABAT][1] = "file:///android_asset/e_shabbat_1.html";
 		chaptersFiles[E_SHABAT][2] = "file:///android_asset/e_shabbat_2.html";
 		chaptersFiles[E_SHABAT][3] = "file:///android_asset/e_shabbat_3.html";
@@ -1452,7 +1466,7 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersFiles[E_SHABAT][29] = "file:///android_asset/e_shabbat_29.html";
 		chaptersFiles[E_SHABAT][30] = "file:///android_asset/e_shabbat_30.html";
 		/*F_TEFILA*/
-		chaptersFiles[F_TEFILA][0] = "file:///android_asset/F_tefila_contents.html";
+		chaptersFiles[F_TEFILA][0] = "file:///android_asset/F_tefila_tochen.html";
 		chaptersFiles[F_TEFILA][1] = "file:///android_asset/F_tefila_1.html";
 		chaptersFiles[F_TEFILA][2] = "file:///android_asset/F_tefila_2.html";
 		chaptersFiles[F_TEFILA][3] = "file:///android_asset/F_tefila_3.html";
@@ -1480,6 +1494,38 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersFiles[F_TEFILA][25] = "file:///android_asset/F_tefila_25.html";
 		chaptersFiles[F_TEFILA][26] = "file:///android_asset/F_tefila_26.html";
 
+		/*S_SHABAT*/
+		chaptersFiles[S_SHABAT][0] = "file:///android_asset/s_shabat_tochen.html";
+		chaptersFiles[S_SHABAT][1] = "file:///android_asset/s_shabat_1.html";
+		chaptersFiles[S_SHABAT][2] = "file:///android_asset/s_shabat_2.html";
+		chaptersFiles[S_SHABAT][3] = "file:///android_asset/s_shabat_3.html";
+		chaptersFiles[S_SHABAT][4] = "file:///android_asset/s_shabat_4.html";
+		chaptersFiles[S_SHABAT][5] = "file:///android_asset/s_shabat_5.html";
+		chaptersFiles[S_SHABAT][6] = "file:///android_asset/s_shabat_6.html";
+		chaptersFiles[S_SHABAT][7] = "file:///android_asset/s_shabat_7.html";
+		chaptersFiles[S_SHABAT][8] = "file:///android_asset/s_shabat_8.html";
+		chaptersFiles[S_SHABAT][9] = "file:///android_asset/s_shabat_9.html";
+		chaptersFiles[S_SHABAT][10] = "file:///android_asset/s_shabat_10.html";
+		chaptersFiles[S_SHABAT][11] = "file:///android_asset/s_shabat_11.html";
+		chaptersFiles[S_SHABAT][12] = "file:///android_asset/s_shabat_12.html";
+		chaptersFiles[S_SHABAT][13] = "file:///android_asset/s_shabat_13.html";
+		chaptersFiles[S_SHABAT][14] = "file:///android_asset/s_shabat_14.html";
+		chaptersFiles[S_SHABAT][15] = "file:///android_asset/s_shabat_15.html";
+		chaptersFiles[S_SHABAT][16] = "file:///android_asset/s_shabat_16.html";
+		chaptersFiles[S_SHABAT][17] = "file:///android_asset/s_shabat_17.html";
+		chaptersFiles[S_SHABAT][18] = "file:///android_asset/s_shabat_18.html";
+		chaptersFiles[S_SHABAT][19] = "file:///android_asset/s_shabat_19.html";
+		chaptersFiles[S_SHABAT][20] = "file:///android_asset/s_shabat_20.html";
+		chaptersFiles[S_SHABAT][21] = "file:///android_asset/s_shabat_21.html";
+		chaptersFiles[S_SHABAT][22] = "file:///android_asset/s_shabat_22.html";
+		chaptersFiles[S_SHABAT][23] = "file:///android_asset/s_shabat_23.html";
+		chaptersFiles[S_SHABAT][24] = "file:///android_asset/s_shabat_24.html";
+		chaptersFiles[S_SHABAT][25] = "file:///android_asset/s_shabat_25.html";
+		chaptersFiles[S_SHABAT][26] = "file:///android_asset/s_shabat_26.html";
+		chaptersFiles[S_SHABAT][27] = "file:///android_asset/s_shabat_27.html";
+		chaptersFiles[S_SHABAT][28] = "file:///android_asset/s_shabat_28.html";
+		chaptersFiles[S_SHABAT][29] = "file:///android_asset/s_shabat_29.html";
+		chaptersFiles[S_SHABAT][30] = "file:///android_asset/s_shabat_30.html";
 	}
 
 
@@ -1909,12 +1955,14 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 			return "זמנים";
 		case YAMIM:
 			return "ימים נוראים";
+		case KASHRUT:
+			return "כשרות א";
 		case LIKUTIM_A:
 			return "ליקוטים א";
 		case LIKUTIM_B:
 			return "ליקוטים ב";
-		case LIKUTIM_C:
-			return "ליקוטים ג";
+		case MISHPACHA:
+			return "משפחה";
 		case MOADIM:
 			return "מועדים";
 		case SUCOT:
@@ -1955,6 +2003,8 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 			return "Shabbat";
 		case F_TEFILA:
 			return "La prière d’Israël";
+		case S_SHABAT:
+			return "Shabbat (Español)";
 		default:
 			return "לא ידוע";
 		}
@@ -2021,6 +2071,26 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersNames[YAMIM][8] = "ימים נוראים: ח - דיני התענית";
 		chaptersNames[YAMIM][9] = "ימים נוראים: ט - שאר עינויים";
 		chaptersNames[YAMIM][10] = "ימים נוראים: י - עבודת יום הכיפורים";
+		/*KASHRUT*/
+		chaptersNames[KASHRUT][1] = "כשרות א: א - חדש";
+		chaptersNames[KASHRUT][2] = "כשרות א: ב - ערלה ורבעי";
+		chaptersNames[KASHRUT][3] = "כשרות א: ג - כלאי בהמה ואילן";
+		chaptersNames[KASHRUT][4] = "כשרות א: ד - כלאי זרעים";
+		chaptersNames[KASHRUT][5] = "כשרות א: ה - כלאי הכרם";
+		chaptersNames[KASHRUT][6] = "כשרות א: ו - מתנות עניים";
+		chaptersNames[KASHRUT][7] = "כשרות א: ז - תרומות ומעשרות";
+		chaptersNames[KASHRUT][8] = "כשרות א: ח - החייב והפטור";
+		chaptersNames[KASHRUT][9] = "כשרות א: ט - כללי המצווה";
+		chaptersNames[KASHRUT][10] ="כשרות א: י - סדר ההפרשה למעשה";
+		chaptersNames[KASHRUT][11] ="כשרות א: יא - חלה";
+		chaptersNames[KASHRUT][12] ="כשרות א: יב - מצוות התלויות בארץ";
+		chaptersNames[KASHRUT][13] ="כשרות א: יג - עצי פרי ובל תשחית";
+		chaptersNames[KASHRUT][14] ="כשרות א: יד - אכילת בשר";
+		chaptersNames[KASHRUT][15] ="כשרות א: טו - צער בעלי חיים";
+		chaptersNames[KASHRUT][16] ="כשרות א: טז - שילוח הקן";
+		chaptersNames[KASHRUT][17] ="כשרות א: יז - כשרות בעלי חיים";
+		chaptersNames[KASHRUT][18] ="כשרות א: יח - הלכות שחיטה";
+		chaptersNames[KASHRUT][19] ="כשרות א: יט - מתנות כהונה מהחי";
 		/*LIKUTIM_A*/
 		chaptersNames[LIKUTIM_A][1] = "ליקוטים א: א - הלכות תלמוד תורה";
 		chaptersNames[LIKUTIM_A][2] = "ליקוטים א: ב - החינוך לתורה";
@@ -2033,8 +2103,6 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersNames[LIKUTIM_A][9] = "ליקוטים א: ט - תפילין";
 		chaptersNames[LIKUTIM_A][10] = "ליקוטים א: י - מהלכות מזוזה";
 		chaptersNames[LIKUTIM_A][11] = "ליקוטים א: יא - הלכות כהנים";
-		chaptersNames[LIKUTIM_A][12] = "ליקוטים א: יב - תרומות ומעשרות";
-		chaptersNames[LIKUTIM_A][13] = "ליקוטים א: יג - מתנות מן החי";
 		/*LIKUTIM_B*/
 		chaptersNames[LIKUTIM_B][1] = "ליקוטים ב: א - בין אדם לחברו";
 		chaptersNames[LIKUTIM_B][2] = "ליקוטים ב: ב - הלכות אמירת אמת";
@@ -2053,23 +2121,17 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 		chaptersNames[LIKUTIM_B][15] = "ליקוטים ב: טו - הלכות הנוטה למות";
 		chaptersNames[LIKUTIM_B][16] = "ליקוטים ב: טז - ליקוטים";
 		chaptersNames[LIKUTIM_B][17] = "ליקוטים ב: יז - חברה ושליחות";
-		/*LIKUTIM_C*/
-		chaptersNames[LIKUTIM_C][1] = "ליקוטים ג: א - כיבוד הורים";
-		chaptersNames[LIKUTIM_C][2] = "ליקוטים ג: ב - לקראת נישואין";
-		chaptersNames[LIKUTIM_C][3] = "ליקוטים ג: ג - הלכות נישואין";
-		chaptersNames[LIKUTIM_C][4] = "ליקוטים ג: ד - הלכות החתונה ומנהגיה";
-		chaptersNames[LIKUTIM_C][5] = "ליקוטים ג: ה - איסורי עריות";
-		chaptersNames[LIKUTIM_C][6] = "ליקוטים ג: ו - הלכות צניעות";
-		chaptersNames[LIKUTIM_C][7] = "ליקוטים ג: ז - ברית מילה";
-		chaptersNames[LIKUTIM_C][8] = "ליקוטים ג: ח - פדיון בכורות";
-		chaptersNames[LIKUTIM_C][9] = "ליקוטים ג: ט - צער בעלי חיים";
-		chaptersNames[LIKUTIM_C][10] = "ליקוטים ג: י - מצוות שילוח הקן";
-		chaptersNames[LIKUTIM_C][11] = "ליקוטים ג: יא - כלאיים באילן ובהמה";
-		chaptersNames[LIKUTIM_C][12] = "ליקוטים ג: יב - הלכות שמירת עצי פרי";
-		chaptersNames[LIKUTIM_C][13] = "ליקוטים ג: יג - בל תשחית";
-		chaptersNames[LIKUTIM_C][14] = "ליקוטים ג: יד - הלכות תולעים";
-		chaptersNames[LIKUTIM_C][15] = "ליקוטים ג: טו - הלכות טבילת כלים";
-		chaptersNames[LIKUTIM_C][16] = "ליקוטים ג: טז - ליקוטים בכשרות";
+		/*MISHPACHA*/
+		chaptersNames[MISHPACHA][1] = "משפחה: א - כיבוד הורים";
+		chaptersNames[MISHPACHA][2] = "משפחה: ב - מצוות הנישואין";
+		chaptersNames[MISHPACHA][3] = "משפחה: ג - שידוכים";
+		chaptersNames[MISHPACHA][4] = "משפחה: ד - קידושין וכתובה";
+		chaptersNames[MISHPACHA][5] = "משפחה: ה - החתונה ומנהגיה";
+		chaptersNames[MISHPACHA][6] = "משפחה: ו - איסורי עריות";
+		chaptersNames[MISHPACHA][7] = "משפחה: ז - מהלכות צניעות";
+		chaptersNames[MISHPACHA][8] = "משפחה: ח - ברית מילה";
+		chaptersNames[MISHPACHA][9] = "משפחה: ט - פדיון הבן";
+		chaptersNames[MISHPACHA][10] ="משפחה: י - אבלות";
 		/*MOADIM*/
 		chaptersNames[MOADIM][1] = "מועדים: א - פתיחה";
 		chaptersNames[MOADIM][2] = "מועדים: ב - דיני עשה ביום טוב";

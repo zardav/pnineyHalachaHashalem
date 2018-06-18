@@ -1,16 +1,22 @@
 package com.rafraph.pnineyHalachaHashalem;
 
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.PopupMenu;
 import android.text.Html;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,7 +44,15 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
+////
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.FirebaseStorage;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.AuthResult;
+////
 
 public class MainActivity extends ActionBarActivity
 {
@@ -46,31 +60,33 @@ public class MainActivity extends ActionBarActivity
 	private static final int HAAMVEHAAREZ 	= 1;
 	private static final int ZMANIM    		= 2;
 	private static final int YAMIM    		= 3;
-	private static final int LIKUTIM_A 		= 4;
-	private static final int LIKUTIM_B 		= 5;
-	private static final int LIKUTIM_C 		= 6;
+	private static final int KASHRUT 		= 4;
+	private static final int LIKUTIM_A 		= 5;
+	private static final int LIKUTIM_B 		= 6;
 	private static final int MOADIM    		= 7;
-	private static final int SUCOT			= 8;
-	private static final int PESACH			= 9;
-	private static final int SHVIIT			= 10;
-	private static final int SHABAT			= 11;
-	private static final int SIMCHAT		= 12;	
-	private static final int TEFILA			= 13;
-	private static final int TEFILAT_NASHIM	= 14;
-	private static final int HAR_BRACHOT    = 15;
-	private static final int HAR_YAMIM      = 16;
-	private static final int HAR_MOADIM     = 17;
-	private static final int HAR_SUCOT      = 18;
-	private static final int HAR_SHABAT     = 19;
-	private static final int HAR_SIMCHAT    = 20;
-	private static final int BOOKS_HEB_NUMBER	= 21;
-	private static final int E_TEFILA       = 21;
-	private static final int E_PESACH       = 22;
-	private static final int E_ZMANIM       = 23;
-	private static final int E_WOMEN_PRAYER = 24;
-	private static final int E_SHABAT       = 25;
-	private static final int F_TEFILA       = 26;
-	private static final int BOOKS_NUMBER	= 27;
+    private static final int MISHPACHA   	= 8;
+	private static final int SUCOT			= 9;
+	private static final int PESACH			= 10;
+	private static final int SHVIIT			= 11;
+	private static final int SHABAT			= 12;
+	private static final int SIMCHAT		= 13;
+	private static final int TEFILA			= 14;
+	private static final int TEFILAT_NASHIM	= 15;
+	private static final int HAR_BRACHOT    = 16;
+	private static final int HAR_YAMIM      = 17;
+	private static final int HAR_MOADIM     = 18;
+	private static final int HAR_SUCOT      = 19;
+	private static final int HAR_SHABAT     = 20;
+	private static final int HAR_SIMCHAT    = 21;
+	private static final int BOOKS_HEB_NUMBER	= 22;
+	private static final int E_TEFILA       = 22;
+	private static final int E_PESACH       = 23;
+	private static final int E_ZMANIM       = 24;
+	private static final int E_WOMEN_PRAYER = 25;
+	private static final int E_SHABAT       = 26;
+	private static final int F_TEFILA       = 27;
+	private static final int S_SHABAT        = 28;
+	private static final int BOOKS_NUMBER	= 29;
 
 
 	private static final int HEBREW	 = 0;
@@ -92,11 +108,15 @@ public class MainActivity extends ActionBarActivity
 	public ActionBar ab;
 	public Menu abMenu=null;
 	public EditText TextToDecode;
-	public Dialog acronymsDialog, newVersionDialog, simchatDialog, languageDialog;
+	public Dialog acronymsDialog, newVersionDialog, simchatDialog, languageDialog, booksDownloadDialog;
 	String acronymsText;
     public int StartInLastLocation = 1;
 	public boolean newVersion = false;
 	public Context context;
+	private StorageReference storageRef;
+    private FirebaseStorage storage;
+	//private FirebaseAuth mAuth;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -110,7 +130,11 @@ public class MainActivity extends ActionBarActivity
 		SimchatMailPswd = mPrefs.getInt("SimchatMailPswd", 0);
 		StartInLastLocation = mPrefs.getInt("StartInLastLocation", 1);
 		MyLanguage = mPrefs.getInt("MyLanguage", -1);
+        storage = FirebaseStorage.getInstance();
+        // Create a storage reference from our app
+        StorageReference storageRef = storage.getReference();
 
+		//mAuth = FirebaseAuth.getInstance();
 
 		ab = getSupportActionBar();
 		// get the listview
@@ -177,7 +201,7 @@ public class MainActivity extends ActionBarActivity
 		{
 			version = packageManager.getPackageInfo(packageName, 0).versionName;
 			
-			if(mPrefs.getString("Version", "").equals("2.1") == false)
+			if(mPrefs.getString("Version", "").equals("2.3") == false)
 			{
 				newVersion = true;
 				shPrefEditor.putString("Version", version);
@@ -286,7 +310,7 @@ public class MainActivity extends ActionBarActivity
 		PopupMenu popupMenu = new PopupMenu(MainActivity.this, v);
 		//  popupMenu.getMenuInflater().inflate(R.menu.popupmenu, popupMenu.getMenu());
 
-		String configHeaders[] = new String[7];
+		String configHeaders[] = new String[8];
 		if(MyLanguage == ENGLISH) {
 			configHeaders[0] = "Settings";
 			configHeaders[1] = "About";
@@ -330,7 +354,8 @@ public class MainActivity extends ActionBarActivity
 			configHeaders[3] = "הסבר על החיפוש";
 			configHeaders[4] = "ראשי תיבות";
 			configHeaders[5] = "הסכמות";
-			configHeaders[6] = "Language / שפה";
+           //booksDownload configHeaders[6] = "ספרים להורדה";
+			configHeaders[6/*booksDownload 7*/] = "Language / שפה";
 		}
 
 		popupMenu.getMenu().add(0,0,0,configHeaders[0]);//(int groupId, int itemId, int order, int titleRes)
@@ -340,6 +365,7 @@ public class MainActivity extends ActionBarActivity
 		popupMenu.getMenu().add(0,4,4,configHeaders[4]);
 		popupMenu.getMenu().add(0,5,5,configHeaders[5]);
 		popupMenu.getMenu().add(0,6,6,configHeaders[6]);
+       //booksDownload popupMenu.getMenu().add(0,7,7,configHeaders[7]);
 		
 		popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() 
 		{
@@ -404,9 +430,12 @@ public class MainActivity extends ActionBarActivity
 				case 5:/*hascamot*/
 					hascamotDialog();
 					break;
-				case 6:/*language*/
-					languageDialog(context);
-					break;
+			//	case 6:/*booksDownload*/
+            //       booksDownloadDialog(context);
+			//		break;
+                case /*7*/6:/*language*/
+                    languageDialog(context);
+                    break;
 					
 				default:
 					break;
@@ -429,10 +458,11 @@ public class MainActivity extends ActionBarActivity
 		listDataHeader.add("העם והארץ");
 		listDataHeader.add("זמנים");
 		listDataHeader.add("ימים נוראים");
+		listDataHeader.add("כשרות א - הצומח והחי");
 		listDataHeader.add("ליקוטים א");
 		listDataHeader.add("ליקוטים ב");
-		listDataHeader.add("ליקוטים ג");
 		listDataHeader.add("מועדים");
+        listDataHeader.add("משפחה");
 		listDataHeader.add("סוכות");
 		listDataHeader.add("פסח");
 		listDataHeader.add("שביעית ויובל");
@@ -452,6 +482,7 @@ public class MainActivity extends ActionBarActivity
 		listDataHeader.add("Laws of Women’s Prayer");
 		listDataHeader.add("Laws of Shabbat");
 		listDataHeader.add("La prière d’Israël");
+		listDataHeader.add("Shabbat (Español)");
 
 
 		// Adding child data
@@ -522,6 +553,28 @@ public class MainActivity extends ActionBarActivity
 		yamim.add("ט - שאר עינויים");
 		yamim.add("י - עבודת יום הכיפורים");
 
+		List<String> kashrut = new ArrayList<String>();
+		kashrut.add("תוכן מפורט, פתח דבר");
+		kashrut.add("א - חדש");
+		kashrut.add("ב - ערלה ורבעי");
+		kashrut.add("ג - כלאי בהמה ואילן");
+		kashrut.add("ד - כלאי זרעים");
+		kashrut.add("ה - כלאי הכרם");
+		kashrut.add("ו - מתנות עניים");
+		kashrut.add("ז - תרומות ומעשרות");
+		kashrut.add("ח - החייב והפטור");
+		kashrut.add("ט - כללי המצווה");
+		kashrut.add("י - סדר ההפרשה למעשה");
+		kashrut.add("יא - חלה");
+		kashrut.add("יב - מצוות התלויות בארץ");
+		kashrut.add("יג - עצי פרי ובל תשחית");
+		kashrut.add("יד - אכילת בשר");
+		kashrut.add("טו - צער בעלי חיים");
+		kashrut.add("טז - שילוח הקן");
+		kashrut.add("יז - כשרות בעלי חיים");
+		kashrut.add("יח - הלכות שחיטה");
+		kashrut.add("יט - מתנות כהונה מהחי");
+
 		List<String> likutimA = new ArrayList<String>();
 		likutimA.add("תוכן מפורט, מבוא");
 		likutimA.add("א - הלכות תלמוד תורה");
@@ -535,8 +588,6 @@ public class MainActivity extends ActionBarActivity
 		likutimA.add("ט - תפילין");
 		likutimA.add("י - מהלכות מזוזה");
 		likutimA.add("יא - הלכות כהנים");
-		likutimA.add("יב - תרומות ומעשרות");
-		likutimA.add("יג - מתנות מן החי");
 
 		List<String> likutimB = new ArrayList<String>();
 		likutimB.add("תוכן מפורט, מבוא");
@@ -557,24 +608,18 @@ public class MainActivity extends ActionBarActivity
 		likutimB.add("טו - ליקוטים");
 		likutimB.add("טז - חברה ושליחות");
 
-		List<String> likutimC = new ArrayList<String>();
-		likutimC.add("תוכן מפורט, מבוא");
-		likutimC.add("א - כיבוד הורים");
-		likutimC.add("ב - לקראת נישואין");
-		likutimC.add("ג - הלכות נישואין");
-		likutimC.add("ד - הלכות החתונה ומנהגיה");
-		likutimC.add("ה - איסורי עריות");
-		likutimC.add("ו - הלכות צניעות");
-		likutimC.add("ז - ברית מילה");
-		likutimC.add("ח - פדיון בכורות");
-		likutimC.add("ט - צער בעלי חיים");
-		likutimC.add("י - מצוות שילוח הקן");
-		likutimC.add("יא - כלאיים באילן ובהמה");
-		likutimC.add("יב - הלכות שמירת עצי פרי");
-		likutimC.add("יג - בל תשחית");
-		likutimC.add("יד - הלכות תולעים");
-		likutimC.add("טו - הלכות טבילת כלים");
-		likutimC.add("טז - ליקוטים בכשרות");
+		List<String> mishpacha = new ArrayList<String>();
+        mishpacha.add("תוכן מפורט, מבוא");
+		mishpacha.add("א - כיבוד הורים");
+		mishpacha.add("ב - מצוות הנישואין");
+		mishpacha.add("ג - שידוכים");
+		mishpacha.add("ד - קידושין וכתובה");
+		mishpacha.add("ה - החתונה ומנהגיה");
+		mishpacha.add("ו - איסורי עריות");
+		mishpacha.add("ז - מהלכות צניעות");
+		mishpacha.add("ח - ברית מילה");
+		mishpacha.add("ט - פדיון הבן");
+		mishpacha.add("י - אבלות");
 
 		List<String> moadim = new ArrayList<String>();
 		moadim.add("תוכן מפורט, מבוא, מפתח");
@@ -998,14 +1043,48 @@ public class MainActivity extends ActionBarActivity
 		F_tefila.add("25 - L’office d’Arvit");
 		F_tefila.add("26 - Prière du coucher");
 
+		List<String> S_shabat = new ArrayList<String>();
+		S_shabat.add("Índice Detallado, Prólogo");
+		S_shabat.add("1 - Introducción");
+		S_shabat.add("2 - Los preparativos previos al Shabat");
+		S_shabat.add("3 - Los preparativos previos al Shabat");
+		S_shabat.add("4 - El encendido de las velas de Shabat");
+		S_shabat.add("5 - El encendido de las velas de Shabat");
+		S_shabat.add("6 - Leyes referentes al Kidush");
+		S_shabat.add("7 - Leyes referentes al Kidush");
+		S_shabat.add("8 - Havdalá y la conclusión del Shabat");
+		S_shabat.add("9 - Havdalá y la conclusión del Shabat");
+		S_shabat.add("10 - Cocinar");
+		S_shabat.add("11 - Cocinar");
+		S_shabat.add("12 - La preparación de alimentos");
+		S_shabat.add("13 - Labores necesarias para la confección de vestimenta");
+		S_shabat.add("14 - El cuidado corporal");
+		S_shabat.add("15 - \"Construir\" (\"Boné\"), \"demoler\" (\"Soter\") y \"el toque final\" (\"Maké Bepatish\")");
+		S_shabat.add("16 - Encender y apagar un fuego");
+		S_shabat.add("17 - La electricidad y los artefactos eléctricos");
+		S_shabat.add("18 - Escribir (\"Kotev\"), borrar (\"Mojek\") y pintar o colorear (\"Tzovea\"). En este capítulo se explicarán también las siguientes labores: desollar (\"Mafshit\"), curtir (\"Meabed\"), alisar (\"Memajek\") y trazar una línea para efectuar un corte (\"Mesartet\")");
+		S_shabat.add("19 - Labores relativas al reino vegetal. En este capítulo se explicarán las siguientes labores: \"Arar\" (\"Joresh\"), \"Sembrar\" (\"Zorea\"), \"Cosechar\" (\"Kotzer\") y \"Apilar\" (\"Me´amer\")");
+		S_shabat.add("20 - Animales");
+		S_shabat.add("21 - Transportar\" (\"Hotzaá\")");
+		S_shabat.add("22 - El carácter del Shabat");
+		S_shabat.add("23 - \"Muktzé\"");
+		S_shabat.add("24 - Leyes referentes a los niños pequeños (\"Dinei katán\")");
+		S_shabat.add("25 - Labores realizadas por un gentil");
+		S_shabat.add("26 - Labores realizadas en Shabat y la prohibición de facilitar la transgresión del prójimo (\"lifnei iver\" N. de t. \"no pondrás obstáculo delante del ciego\")");
+		S_shabat.add("27 - Casos de peligro inminente de vida (\"pikuaj nefesh\") y reglas referentes a personas enfermas");
+		S_shabat.add("28 - Persona enferma que no corre riesgo de vida");
+		S_shabat.add("29 - Eruvín");
+		S_shabat.add("30 - Las \"áreas (\"tjumim\") del Shabat\"");
+
 		listDataChild.put(listDataHeader.get(BRACHOT), brachot); // Header, Child data
 		listDataChild.put(listDataHeader.get(HAAMVEHAAREZ), haam);
 		listDataChild.put(listDataHeader.get(ZMANIM), zmanim);
 		listDataChild.put(listDataHeader.get(YAMIM), yamim);
+		listDataChild.put(listDataHeader.get(KASHRUT), kashrut);
 		listDataChild.put(listDataHeader.get(LIKUTIM_A), likutimA);
 		listDataChild.put(listDataHeader.get(LIKUTIM_B), likutimB);
-		listDataChild.put(listDataHeader.get(LIKUTIM_C), likutimC);
 		listDataChild.put(listDataHeader.get(MOADIM), moadim);
+        listDataChild.put(listDataHeader.get(MISHPACHA), mishpacha);
 		listDataChild.put(listDataHeader.get(SUCOT), sucot);
 		listDataChild.put(listDataHeader.get(PESACH), pesach);
 		listDataChild.put(listDataHeader.get(SHVIIT), shviit);
@@ -1025,6 +1104,8 @@ public class MainActivity extends ActionBarActivity
 		listDataChild.put(listDataHeader.get(E_WOMEN_PRAYER), E_Women_Prayer);
 		listDataChild.put(listDataHeader.get(E_SHABAT), E_Shabat);
 		listDataChild.put(listDataHeader.get(F_TEFILA), F_tefila);
+		listDataChild.put(listDataHeader.get(S_SHABAT), S_shabat);
+
 	}//prepareListData
 
 	void acronymsDecode()
@@ -1286,6 +1367,50 @@ public class MainActivity extends ActionBarActivity
 		languageDialog.show();
 	}
 
+
+    void booksDownloadDialog(Context context)
+    {
+        booksDownloadDialog = new Dialog(context);
+        booksDownloadDialog.setContentView(R.layout.books_download);
+
+        Button ButtonDownloadBooks = (Button) booksDownloadDialog.findViewById(R.id.dialogButtonDownload);
+        final CheckBox CheckBoxEnglish = (CheckBox) booksDownloadDialog.findViewById(R.id.checkBoxEnglish);
+        final CheckBox CheckBoxRussian = (CheckBox) booksDownloadDialog.findViewById(R.id.checkBoxRussian);
+        final CheckBox CheckBoxSpanish = (CheckBox) booksDownloadDialog.findViewById(R.id.checkBoxSpanish);
+        final CheckBox CheckBoxFrench  = (CheckBox) booksDownloadDialog.findViewById(R.id.checkBoxFrench);
+
+        // if button is clicked
+		ButtonDownloadBooks.setOnClickListener(new OnClickListener()
+        {
+            @SuppressLint("NewApi")
+            @Override
+            public void onClick(View v)
+            {
+            	if(CheckBoxEnglish.isChecked())
+                {
+                    downloadEnglishBooks();
+                }
+                if(CheckBoxRussian.isChecked())
+                {
+
+                }
+                if(CheckBoxSpanish.isChecked())
+                {
+
+                }
+                if(CheckBoxFrench.isChecked())
+                {
+
+                }
+
+                booksDownloadDialog.dismiss();
+            }
+        });
+
+        booksDownloadDialog.show();
+    }
+
+
 	void goToLastLocation()
 	{
 		try
@@ -1303,5 +1428,110 @@ public class MainActivity extends ActionBarActivity
 			e.printStackTrace();
 		}
 	}
+
+	void downloadEnglishBooks()
+	{
+	    File f = null;
+
+	    f = new File("ftp_brachot.html");
+        // find the absolute path
+        String a = f.getAbsolutePath();
+        // prints absolute path
+        System.out.print(a);
+
+        try {
+            downloadAndSaveFile("ftp.hesder.org", 21,
+                    "pnineyapp@hesder.org", "pnineyapp312", "brachot_1.html", f);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+	}
+
+   /* private void signInAnonymously(){
+        mAuth.signInAnonymously().addOnSuccessListener(this, new OnSuccessListener<AuthResult>() {
+            @Override public void onSuccess(AuthResult authResult) {
+                // do your stuff
+                Log.i("TAG", "signInAnonymously:SUCCESS");
+            }
+        }) .addOnFailureListener(this, new OnFailureListener() {
+            @Override public void onFailure(@NonNull Exception exception) {
+                Log.e("TAG", "signInAnonymously:FAILURE", exception);
+            }
+        });
+    }*/
+
+    static final String LOG_TAG = "MyFtpTest";
+
+    private void downloadAndSaveFile(String server, int portNumber,
+                                        String user, String password, String filename, File localFile)
+			throws IOException {
+		try{
+		File fileFromFB = File.createTempFile("E_pesach_1", "html");
+//            signInAnonymously();
+
+// Create a reference to a file from a Google Cloud Storage URI
+        StorageReference gsReference = storage.getReferenceFromUrl("gs://pnineyhalachahashalem.appspot.com/English/E_pesach_1.html");
+
+		//StorageReference riversRef = mStorageRef.child("brachot_1.html");
+            gsReference.getFile(fileFromFB)
+				.addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+					@Override
+					public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+						Log.d(LOG_TAG, "Successfully downloaded data to local file");
+
+					}
+				}).addOnFailureListener(new OnFailureListener() {
+
+			@Override
+			public void onFailure(@NonNull Exception exception) {
+				Log.d(LOG_TAG, "Handle failed download");
+
+			}
+		});
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
+	}
+       /*     throws IOException {
+        FTPClient ftp = null;
+
+        try {
+            ftp = new FTPClient();
+            ftp.connect(server, portNumber);
+            Log.d(LOG_TAG, "Connected. Reply: " + ftp.getReplyString());
+
+            ftp.login(user, password);
+            Log.d(LOG_TAG, "Logged in");
+            ftp.setFileType(FTP.BINARY_FILE_TYPE);
+            Log.d(LOG_TAG, "Downloading");
+            ftp.enterLocalPassiveMode();
+
+            OutputStream outputStream = null;
+            boolean success = false;
+            try {
+                outputStream = new BufferedOutputStream(new FileOutputStream(
+                        localFile));
+                success = ftp.retrieveFile(filename, outputStream);
+            } finally {
+                if (outputStream != null) {
+                    outputStream.close();
+                }
+            }
+
+            return success;
+        }
+        catch (IOException e){
+			e.printStackTrace();
+		}
+        	finally {
+            if (ftp != null) {
+                //ftp.logout();
+                //ftp.disconnect();
+            }
+            return false;
+        }
+    }*/
 
 }

@@ -32,27 +32,29 @@ public class SearchableActivity extends Activity
 	private static final int HAAMVEHAAREZ 	= 1;
 	private static final int ZMANIM    		= 2;
 	private static final int YAMIM    		= 3;
-	private static final int LIKUTIM_A 		= 4;
-	private static final int LIKUTIM_B 		= 5;
-	private static final int LIKUTIM_C 		= 6;
+	private static final int KASHRUT 		= 4;
+	private static final int LIKUTIM_A 		= 5;
+	private static final int LIKUTIM_B 		= 6;
 	private static final int MOADIM    		= 7;
-	private static final int SUCOT			= 8;
-	private static final int PESACH			= 9;
-	private static final int SHVIIT			= 10;
-	private static final int SHABAT			= 11;
-	private static final int SIMCHAT		= 12;
-	private static final int TEFILA			= 13;
-	private static final int TEFILAT_NASHIM	= 14;
-	private static final int HAR_BRACHOT    = 15;
-	private static final int HAR_YAMIM      = 16;
-	private static final int HAR_MOADIM     = 17;
-	private static final int HAR_SUCOT      = 18;
-	private static final int HAR_SHABAT     = 19;
-	private static final int HAR_SIMCHAT    = 20;
-	private static final int BOOKS_NUMBER	= 21;
+	private static final int MISHPACHA   	= 8;
+	private static final int SUCOT			= 9;
+	private static final int PESACH			= 10;
+	private static final int SHVIIT			= 11;
+	private static final int SHABAT			= 12;
+	private static final int SIMCHAT		= 13;
+	private static final int TEFILA			= 14;
+	private static final int TEFILAT_NASHIM	= 15;
+	private static final int HAR_BRACHOT    = 16;
+	private static final int HAR_YAMIM      = 17;
+	private static final int HAR_MOADIM     = 18;
+	private static final int HAR_SUCOT      = 19;
+	private static final int HAR_SHABAT     = 20;
+	private static final int HAR_SIMCHAT    = 21;
+	private static final int BOOKS_NUMBER	= 22;
 
-	/*							0	1	2	3	4	5	6	7	8	9  10  11  12  13  14  15  16  17  18 19  20*/
-	public int[] lastChapter = {17, 11, 17, 10, 13, 16, 16, 13, 8, 16, 11, 30, 10, 26, 24, 17, 10, 12, 8, 30, 10};
+	/*							0	1	2	3	4	5	6	7	8	9  10  11  12  13  14  15  16  17  18 19  20  21  */
+	public int[] lastChapter = {17, 11, 17, 10, 19, 11, 16, 13, 10, 8, 16, 11, 30, 10, 26, 24, 17, 10, 12, 8, 30, 10};
+
 	String[][] chaptersFiles = new String[BOOKS_NUMBER][31];
 	String[][] chaptersNames = new String[BOOKS_NUMBER][31];
 	public List<String> listBookLocation = new ArrayList<String>();
@@ -204,7 +206,7 @@ public class SearchableActivity extends Activity
 					noteIndex = strText.indexOf("<div style=\"display:none;\">", 0);
 					while(index != (-1))
 					{
-						//System.out.println("i="+i" j="+j+" chapterCounter="+chapterCounter);/*for checking crash with searching*/
+						//System.out.println("i="+i+" j="+j+" chapterCounter="+chapterCounter);/*for checking crash with searching*/
 						index = strText.indexOf(query, index+1);
 						if(index != (-1))
 						{
@@ -438,7 +440,28 @@ public class SearchableActivity extends Activity
 		chaptersFiles[YAMIM][7] = "yamim_7.html";
 		chaptersFiles[YAMIM][8] = "yamim_8.html";
 		chaptersFiles[YAMIM][9] = "yamim_9.html";
-		chaptersFiles[YAMIM][10] = "yamim_10.html";	
+		chaptersFiles[YAMIM][10] = "yamim_10.html";
+		/*KASHRUT*/
+		chaptersFiles[KASHRUT][0] = "kashrut_tochen.html";
+		chaptersFiles[KASHRUT][1] = "kashrut_1.html";
+		chaptersFiles[KASHRUT][2] = "kashrut_2.html";
+		chaptersFiles[KASHRUT][3] = "kashrut_3.html";
+		chaptersFiles[KASHRUT][4] = "kashrut_4.html";
+		chaptersFiles[KASHRUT][5] = "kashrut_5.html";
+		chaptersFiles[KASHRUT][6] = "kashrut_6.html";
+		chaptersFiles[KASHRUT][7] = "kashrut_7.html";
+		chaptersFiles[KASHRUT][8] = "kashrut_8.html";
+		chaptersFiles[KASHRUT][9] = "kashrut_9.html";
+		chaptersFiles[KASHRUT][10] = "kashrut_10.html";
+		chaptersFiles[KASHRUT][11] = "kashrut_11.html";
+		chaptersFiles[KASHRUT][12] = "kashrut_12.html";
+		chaptersFiles[KASHRUT][13] = "kashrut_13.html";
+		chaptersFiles[KASHRUT][14] = "kashrut_14.html";
+		chaptersFiles[KASHRUT][15] = "kashrut_15.html";
+		chaptersFiles[KASHRUT][16] = "kashrut_16.html";
+		chaptersFiles[KASHRUT][17] = "kashrut_17.html";
+		chaptersFiles[KASHRUT][18] = "kashrut_18.html";
+		chaptersFiles[KASHRUT][19] = "kashrut_19.html";
 		/*LIKUTIM_A*/
 		chaptersFiles[LIKUTIM_A][0] = "likutim_a_tochen.html";
 		chaptersFiles[LIKUTIM_A][1] = "likutim_a_1.html";
@@ -452,8 +475,6 @@ public class SearchableActivity extends Activity
 		chaptersFiles[LIKUTIM_A][9] = "likutim_a_9.html";
 		chaptersFiles[LIKUTIM_A][10] = "likutim_a_10.html";
 		chaptersFiles[LIKUTIM_A][11] = "likutim_a_11.html";
-		chaptersFiles[LIKUTIM_A][12] = "likutim_a_12.html";
-		chaptersFiles[LIKUTIM_A][13] = "likutim_a_13.html";
 		/*LIKUTIM_B*/
 		chaptersFiles[LIKUTIM_B][0] = "likutim_b_tochen.html";
 		chaptersFiles[LIKUTIM_B][1] = "likutim_b_1.html";
@@ -473,25 +494,6 @@ public class SearchableActivity extends Activity
 		chaptersFiles[LIKUTIM_B][15] = "likutim_b_15.html";
 		chaptersFiles[LIKUTIM_B][16] = "likutim_b_16.html";
 		chaptersFiles[LIKUTIM_B][17] = "likutim_b_17.html";
-		/*LIKUTIM_C*/
-		chaptersFiles[LIKUTIM_C][0] = "likutim_c_tochen.html";
-		chaptersFiles[LIKUTIM_C][1] = "likutim_c_1.html";
-		chaptersFiles[LIKUTIM_C][2] = "likutim_c_2.html";
-		chaptersFiles[LIKUTIM_C][3] = "likutim_c_3.html";
-		chaptersFiles[LIKUTIM_C][4] = "likutim_c_4.html";
-		chaptersFiles[LIKUTIM_C][5] = "likutim_c_5.html";
-		chaptersFiles[LIKUTIM_C][6] = "likutim_c_6.html";
-		chaptersFiles[LIKUTIM_C][7] = "likutim_c_7.html";
-		chaptersFiles[LIKUTIM_C][8] = "likutim_c_8.html";
-		chaptersFiles[LIKUTIM_C][9] = "likutim_c_9.html";
-		chaptersFiles[LIKUTIM_C][10] = "likutim_c_10.html";
-		chaptersFiles[LIKUTIM_C][11] = "likutim_c_11.html";
-		chaptersFiles[LIKUTIM_C][12] = "likutim_c_12.html";
-		chaptersFiles[LIKUTIM_C][13] = "likutim_c_13.html";
-		chaptersFiles[LIKUTIM_C][14] = "likutim_c_14.html";
-		chaptersFiles[LIKUTIM_C][15] = "likutim_c_15.html";
-		chaptersFiles[LIKUTIM_C][16] = "likutim_c_16.html";
-		chaptersFiles[LIKUTIM_C][17] = "likutim_c_17.html";
 		/*MOADIM*/
 		chaptersFiles[MOADIM][0] = "moadim_tochen.html";
 		chaptersFiles[MOADIM][1] = "moadim_1.html";
@@ -507,6 +509,18 @@ public class SearchableActivity extends Activity
 		chaptersFiles[MOADIM][11] = "moadim_11.html";
 		chaptersFiles[MOADIM][12] = "moadim_12.html";
 		chaptersFiles[MOADIM][13] = "moadim_13.html";
+		/*MISHPACHA*/
+		chaptersFiles[MISHPACHA][0] = "mishpacha_tochen.html";
+		chaptersFiles[MISHPACHA][1] = "mishpacha_1.html";
+		chaptersFiles[MISHPACHA][2] = "mishpacha_2.html";
+		chaptersFiles[MISHPACHA][3] = "mishpacha_3.html";
+		chaptersFiles[MISHPACHA][4] = "mishpacha_4.html";
+		chaptersFiles[MISHPACHA][5] = "mishpacha_5.html";
+		chaptersFiles[MISHPACHA][6] = "mishpacha_6.html";
+		chaptersFiles[MISHPACHA][7] = "mishpacha_7.html";
+		chaptersFiles[MISHPACHA][8] = "mishpacha_8.html";
+		chaptersFiles[MISHPACHA][9] = "mishpacha_9.html";
+		chaptersFiles[MISHPACHA][10] = "mishpacha_10.html";
 		/*SUCOT*/
 		chaptersFiles[SUCOT][0] = "sucot_tochen.html";
 		chaptersFiles[SUCOT][1] = "sucot_1.html";
@@ -809,6 +823,26 @@ public class SearchableActivity extends Activity
 		chaptersNames[YAMIM][8] = "ימים נוראים: ח - דיני התענית";
 		chaptersNames[YAMIM][9] = "ימים נוראים: ט - שאר עינויים";
 		chaptersNames[YAMIM][10] = "ימים נוראים: י - עבודת יום הכיפורים";
+		/*KASHRUT*/
+		chaptersNames[KASHRUT][1] = "כשרות א: א - חדש";
+		chaptersNames[KASHRUT][2] = "כשרות א: ב - ערלה ורבעי";
+		chaptersNames[KASHRUT][3] = "כשרות א: ג - כלאי בהמה ואילן";
+		chaptersNames[KASHRUT][4] = "כשרות א: ד - כלאי זרעים";
+		chaptersNames[KASHRUT][5] = "כשרות א: ה - כלאי הכרם";
+		chaptersNames[KASHRUT][6] = "כשרות א: ו - מתנות עניים";
+		chaptersNames[KASHRUT][7] = "כשרות א: ז - תרומות ומעשרות";
+		chaptersNames[KASHRUT][8] = "כשרות א: ח - החייב והפטור";
+		chaptersNames[KASHRUT][9] = "כשרות א: ט - כללי המצווה";
+		chaptersNames[KASHRUT][10] ="כשרות א: י - סדר ההפרשה למעשה";
+		chaptersNames[KASHRUT][11] ="כשרות א: יא - חלה";
+		chaptersNames[KASHRUT][12] ="כשרות א: יב - מצוות התלויות בארץ";
+		chaptersNames[KASHRUT][13] ="כשרות א: יג - עצי פרי ובל תשחית";
+		chaptersNames[KASHRUT][14] ="כשרות א: יד - אכילת בשר";
+		chaptersNames[KASHRUT][15] ="כשרות א: טו - צער בעלי חיים";
+		chaptersNames[KASHRUT][16] ="כשרות א: טז - שילוח הקן";
+		chaptersNames[KASHRUT][17] ="כשרות א: יז - כשרות בעלי חיים";
+		chaptersNames[KASHRUT][18] ="כשרות א: יח - הלכות שחיטה";
+		chaptersNames[KASHRUT][19] ="כשרות א: יט - מתנות כהונה מהחי";
 		/*LIKUTIM_A*/
 		chaptersNames[LIKUTIM_A][1] = "ליקוטים א: א - הלכות תלמוד תורה";
 		chaptersNames[LIKUTIM_A][2] = "ליקוטים א: ב - החינוך לתורה";
@@ -821,8 +855,6 @@ public class SearchableActivity extends Activity
 		chaptersNames[LIKUTIM_A][9] = "ליקוטים א: ט - תפילין";
 		chaptersNames[LIKUTIM_A][10] = "ליקוטים א: י - מהלכות מזוזה";
 		chaptersNames[LIKUTIM_A][11] = "ליקוטים א: יא - הלכות כהנים";
-		chaptersNames[LIKUTIM_A][12] = "ליקוטים א: יב - תרומות ומעשרות";
-		chaptersNames[LIKUTIM_A][13] = "ליקוטים א: יג - מתנות מן החי";
 		/*LIKUTIM_B*/
 		chaptersNames[LIKUTIM_B][1] = "ליקוטים ב: א - בין אדם לחברו";
 		chaptersNames[LIKUTIM_B][2] = "ליקוטים ב: ב - הלכות אמירת אמת";
@@ -841,23 +873,6 @@ public class SearchableActivity extends Activity
 		chaptersNames[LIKUTIM_B][15] = "ליקוטים ב: טו - הלכות הנוטה למות";
 		chaptersNames[LIKUTIM_B][16] = "ליקוטים ב: טז - ליקוטים";
 		chaptersNames[LIKUTIM_B][17] = "ליקוטים ב: יז - חברה ושליחות";
-		/*LIKUTIM_C*/
-		chaptersNames[LIKUTIM_C][1] = "ליקוטים ג: א - כיבוד הורים";
-		chaptersNames[LIKUTIM_C][2] = "ליקוטים ג: ב - לקראת נישואין";
-		chaptersNames[LIKUTIM_C][3] = "ליקוטים ג: ג - הלכות נישואין";
-		chaptersNames[LIKUTIM_C][4] = "ליקוטים ג: ד - הלכות החתונה ומנהגיה";
-		chaptersNames[LIKUTIM_C][5] = "ליקוטים ג: ה - איסורי עריות";
-		chaptersNames[LIKUTIM_C][6] = "ליקוטים ג: ו - הלכות צניעות";
-		chaptersNames[LIKUTIM_C][7] = "ליקוטים ג: ז - ברית מילה";
-		chaptersNames[LIKUTIM_C][8] = "ליקוטים ג: ח - פדיון בכורות";
-		chaptersNames[LIKUTIM_C][9] = "ליקוטים ג: ט - צער בעלי חיים";
-		chaptersNames[LIKUTIM_C][10] = "ליקוטים ג: י - מצוות שילוח הקן";
-		chaptersNames[LIKUTIM_C][11] = "ליקוטים ג: יא - כלאיים באילן ובהמה";
-		chaptersNames[LIKUTIM_C][12] = "ליקוטים ג: יב - הלכות שמירת עצי פרי";
-		chaptersNames[LIKUTIM_C][13] = "ליקוטים ג: יג - בל תשחית";
-		chaptersNames[LIKUTIM_C][14] = "ליקוטים ג: יד - הלכות תולעים";
-		chaptersNames[LIKUTIM_C][15] = "ליקוטים ג: טו - הלכות טבילת כלים";
-		chaptersNames[LIKUTIM_C][16] = "ליקוטים ג: טז - ליקוטים בכשרות";
 		/*MOADIM*/
 		chaptersNames[MOADIM][1] = "מועדים: א - פתיחה";
 		chaptersNames[MOADIM][2] = "מועדים: ב - דיני עשה ביום טוב";
@@ -872,6 +887,17 @@ public class SearchableActivity extends Activity
 		chaptersNames[MOADIM][11] = "מועדים: יא - מלאכת חול המועד";
 		chaptersNames[MOADIM][12] = "מועדים: יב - היתרי עבודה במועד";
 		chaptersNames[MOADIM][13] = "מועדים: יג - חג שבועות";
+		/*MISHPACHA*/
+		chaptersNames[MISHPACHA][1] = "משפחה: א - כיבוד הורים";
+		chaptersNames[MISHPACHA][2] = "משפחה: ב - מצוות הנישואין";
+		chaptersNames[MISHPACHA][3] = "משפחה: ג - שידוכים";
+		chaptersNames[MISHPACHA][4] = "משפחה: ד - קידושין וכתובה";
+		chaptersNames[MISHPACHA][5] = "משפחה: ה - החתונה ומנהגיה";
+		chaptersNames[MISHPACHA][6] = "משפחה: ו - איסורי עריות";
+		chaptersNames[MISHPACHA][7] = "משפחה: ז - מהלכות צניעות";
+		chaptersNames[MISHPACHA][8] = "משפחה: ח - ברית מילה";
+		chaptersNames[MISHPACHA][9] = "משפחה: ט - פדיון הבן";
+		chaptersNames[MISHPACHA][10] ="משפחה: י - אבלות";
 		/*SUCOT*/
 		chaptersNames[SUCOT][1] = "סוכות: א - חג הסוכות";
 		chaptersNames[SUCOT][2] = "סוכות: ב - הלכות סוכה";
