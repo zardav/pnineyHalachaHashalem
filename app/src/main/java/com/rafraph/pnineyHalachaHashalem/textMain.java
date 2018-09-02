@@ -1819,6 +1819,7 @@ public class textMain extends ActionBarActivity implements View.OnClickListener/
 					webview.setBackgroundColor(0x000000);//white
 				//	textActionBar.setTitle(Html.fromHtml("<font color=\"black\">" + title + "</font>"));
 				}
+				invalidateOptionsMenu();
 			}
 		}
 	}
